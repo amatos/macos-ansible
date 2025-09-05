@@ -1,0 +1,5 @@
+---
+- name: install key from default keyserver on target machine
+  gpg_key:
+    fpr: 5FC8FE1141FA769594E91E48F41BDBF6171A3BB4
+    trust: 5

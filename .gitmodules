@@ -1,0 +1,3 @@
+[submodule "modules/ansible-gpg-key"]
+	path = modules/ansible-gpg-key
+	url = https://github.com/netson/ansible-gpg-key
