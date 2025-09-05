@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "Sanity checking and installing required preflight tools"
+
 # Install command line tooling
 if [ ! -e /usr/bin/git ]; then
 	echo "Running xcode-select gui for command line tools"
