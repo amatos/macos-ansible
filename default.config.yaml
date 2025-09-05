@@ -51,7 +51,6 @@ homebrew_installed_packages:
   #  - git
   - gh
   - go
-  - gpg
   - httpie
   - iperf
   - libevent
