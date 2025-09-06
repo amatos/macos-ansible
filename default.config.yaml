@@ -6,20 +6,62 @@ configure_macos: true
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
 dockitems_remove:
-  #  - Launchpad
-  - TV
+  # - Launchpad
+  # - TV
   # - Podcasts
-  - "App Store"
+  #- "App Store"
 dockitems_persist:
+  - name: "Launchpad"
+    path: "/System/Applications/Launchpad.app/"
+    pos: 1
+  - name: "Safari"
+    path: "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/"
+    pos: 2
+  - name: "Helium"
+    path: "/Applications/Helium.app/"
+    pos: 3
+  - name: "Messages"
+    path: "/System/Applications/Messages.app/"
+    pos: 4
+  - name: "Mail"
+    path: "/System/Applications/Mail.app/"
+    pos: 5
+  - name: "Photos"
+    path: "/System/Applications/Photos.app/"
+    pos: 6
+  - name: "FaceTime"
+    path: "/System/Applications/FaceTime.app/"
+    pos: 7
+  - name: "Calendar"
+    path: "/System/Applications/Calendar.app/"
+    pos: 8
+  - name: "Contacts"
+    path: "/System/Applications/Contacts.app/"
+    pos: 9
+  - name: "Music"
+    path: "/System/Applications/Music.app/"
+    pos: 10
+  - name: "News"
+    path: "/System/Applications/News.app/"
+    pos: 11
+  - name: "iPhone Mirroring"
+    path: "/System/Applications/iPhone Mirroring.app/"
+    pos: 12
+  - name: "System Settings"
+    path: "/System/Applications/System Settings.app/"
+    pos: 13
   - name: "Preview"
     path: "/System/Applications/Preview.app/"
-    pos: 16
+    pos: 14
   - name: "BBEdit"
     path: "/Applications/BBEdit.app/"
-    pos: 17
+    pos: 15
+  - name: "Zed"
+    path: "/Applications/Zed.app/"
+    pos: 16
   - name: "Ghostty"
     path: "/Applications/Ghostty.app/"
-    pos: 18
+    pos: 17
 # - name: "Sublime Text"
 #   path: "/Applications/Sublime Text.app/"
 #   pos: 5
@@ -140,7 +182,7 @@ mas_installed_apps:
 mas_email: ""
 mas_password: ""
 
-macos_script: "~/.macos --no-restart"
+macos_script: "~/.local/bin/customize-macos.sh --no-restart"
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
