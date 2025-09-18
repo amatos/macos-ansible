@@ -4,6 +4,9 @@
 
   vars_files:
     - default.config.yaml
+    - homebrew.config.yaml
+    - mas.config.yaml
+    - dock.config.yaml
 
   pre_tasks:
     - name: Include playbook configuration.

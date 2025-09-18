@@ -1,0 +1,31 @@
+# Configuration items for Mac App Store
+
+# See `geerlingguy.mac.mas` role documentation for usage instructions.
+
+# Login credentials -- not required if App Store.app has already logged in
+mas_email: ""
+mas_password: ""
+
+# Run `mas upgrade` to upgrade all installed apps
+mas_upgrade_all_apps: true
+
+mas_installed_apps:
+  #  - { id: , name: ""}
+  - { id: 1569813296, name: "1Password for Safari" }
+  - { id: 1616822987, name: "Affinity Photo 2" }
+  - { id: 1616831348, name: "Affinity Designer 2" }
+  - { id: 1606941598, name: "Affinity Publisher 2" }
+  - { id: 823766827, name: "OneDrive" }
+  - { id: 462054704, name: "Microsoft Word" }
+  - { id: 462058435, name: "Microsoft Excel" }
+  - { id: 462062816, name: "Microsoft PowerPoint" }
+  - { id: 497799835, name: "Xcode" }
+  - { id: 1546457750, name: "Zavala" }
+  - { id: 1198047227, name: "Ad blocker - Magic Lasso" }
+  - { id: 6449873635, name: "Sink It for Reddit" }
+  - { id: 907640277, name: "John's Background Switcher" }
+  - { id: 6444602274, name: "Ivory for Mastodon by Tapbots" }
+  - { id: 1469995354, name: "Broadcasts" }
+  - { id: 1451685025, name: "WireGuard" }
+  - { id: 1006739057, name: "NepTunes for iTunes & Spotify" }
+  - { id: 1355679052, name: "Dropover - Easier Drag & Drop" }

@@ -1,0 +1,81 @@
+---
+# Whether to upgrade homebrew and all packages installed by homebrew.
+# If you prefer to manually update packages via brew commands, leave this set to false.
+homebrew_upgrade_all_packages: true
+
+homebrew_installed_packages:
+  - 1password-cli
+  - atuin
+  - autoconf
+  - bash-completion
+  - bat
+  - btop
+  - chezmoi
+  - cowsay
+  - diff-so-fancy
+  - doxygen
+  - fastfetch
+  - fish
+  - fortune
+  - gettext
+  - gh
+  - gifsicle
+  - go
+  - gum
+  - httpie
+  - iperf
+  - jello
+  - libevent
+  - lsd
+  - neovim
+  - nmap
+  - node
+  - nvm
+  - openssl
+  - php
+  - pngpaste
+  - pv
+  - python-packaging
+  - readline
+  - sqlite
+  - starship
+  - wget
+  - wrk
+  - zsh-history-substring-search
+
+homebrew_taps: ["domt4/autoupdate"]
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - alfred
+  - bbedit
+  - elgato-capture-device-utility
+  - elgato-stream-deck
+  - font-sf-mono-nerd-font-ligaturized
+  - font-zed-mono
+  - font-zed-mono-nerd-font
+  - font-zed-sans
+  - gpg-suite
+  - kaleidoscope
+  - mactex
+  - netnewswire
+  - setapp
+  - slack
+  - soundsource
+  - texstudio
+  - tower
+  - zed
+  - autodesk-fusion
+  - adobe-creative-cloud
+  - winbox
+  - discord
+  - zoom
+  - microsoft-teams
+  - obsidian
+  - obs
+  - syncthing-app
+  - keyboard-maestro
+  - airfoil
+  - fission
+  - hex-fiend
+  - skim
