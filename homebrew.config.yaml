@@ -4,7 +4,6 @@
 homebrew_upgrade_all_packages: true
 
 homebrew_installed_packages:
-  - 1password-cli
   - atuin
   - autoconf
   - bash-completion
@@ -25,6 +24,7 @@ homebrew_installed_packages:
   - httpie
   - iperf
   - jello
+  - lazygit
   - libevent
   - lsd
   - neovim
@@ -47,35 +47,43 @@ homebrew_taps: ["domt4/autoupdate"]
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - 1password
+  - 1password-cli
+  - adobe-creative-cloud
+  - airfoil
   - alfred
+  - ammonite
+  - audio-hijack
+  - autodesk-fusion
   - bbedit
+  - discord
   - elgato-capture-device-utility
   - elgato-stream-deck
+  - fission
   - font-sf-mono-nerd-font-ligaturized
   - font-zed-mono
   - font-zed-mono-nerd-font
   - font-zed-sans
   - gpg-suite
+  - hex-fiend
   - kaleidoscope
+  - keyboard-maestro
+  - linearmouse
+  - little-snitch
+  - logitech-g-hub
   - mactex
   - netnewswire
+  - obs
+  - obsidian
   - setapp
+  - skim
   - slack
   - soundsource
+  - steam
+  - syncthing-app
   - texstudio
   - tower
-  - zed
-  - autodesk-fusion
-  - adobe-creative-cloud
+  - vuescan
   - winbox
-  - discord
+  - zed
   - zoom
-  - microsoft-teams
-  - obsidian
-  - obs
-  - syncthing-app
-  - keyboard-maestro
-  - airfoil
-  - fission
-  - hex-fiend
-  - skim
