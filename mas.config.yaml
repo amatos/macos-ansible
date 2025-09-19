@@ -10,7 +10,6 @@ mas_password: ""
 mas_upgrade_all_apps: true
 
 mas_installed_apps:
-  #  - { id: , name: ""}
   - { id: 1006739057, name: "NepTunes for iTunes & Spotify" }
   - { id: 1198047227, name: "Ad blocker - Magic Lasso" }
   - { id: 1273998507, name: "Turn Off the Lights for Safari" }
@@ -37,3 +36,4 @@ mas_installed_apps:
   - { id: 823766827, name: "OneDrive" }
   - { id: 907640277, name: "John's Background Switcher" }
   - { id: 975937182, name: "Fantastical" }
+  #  - { id: , name: ""}
