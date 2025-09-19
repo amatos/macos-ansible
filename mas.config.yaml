@@ -23,14 +23,14 @@ mas_installed_apps:
   - { id: 1606941598, name: "Affinity Publisher 2" }
   - { id: 1616822987, name: "Affinity Photo 2" }
   - { id: 1616831348, name: "Affinity Designer 2" }
-  - { id: 1616840709, name: "Pages" }
-  - { id: 1616840710, name: "Numbers" }
-  - { id: 1616840711, name: "Keynote" }
-  - { id: 1616840712, name: "iMovie" }
+  - { id: 409201541, name: "Pages" }
+  - { id: 409203825, name: "Numbers" }
+  - { id: 409183694, name: "Keynote" }
   - { id: 462054704, name: "Microsoft Word" }
   - { id: 462058435, name: "Microsoft Excel" }
   - { id: 462062816, name: "Microsoft PowerPoint" }
   - { id: 497799835, name: "Xcode" }
+  - { id: 640199958, name: "Apple Developer Tools" }
   - { id: 6444602274, name: "Ivory for Mastodon by Tapbots" }
   - { id: 6449873635, name: "Sink It for Reddit" }
   - { id: 823766827, name: "OneDrive" }
