@@ -51,27 +51,35 @@ homebrew_cask_apps:
   - 1password
   - 1password-cli
   - adobe-creative-cloud
+  - adobe-dng-converter
   - airfoil
+  - alcove
   - alfred
   - ammonite
   - audio-hijack
   - autodesk-fusion
   - bbedit
+  - betterdisplay
   - discord
   - elgato-capture-device-utility
   - elgato-stream-deck
   - fission
+  - font-jetbrains-mono-nerd-font
   - font-sf-mono-nerd-font-ligaturized
   - font-zed-mono
   - font-zed-mono-nerd-font
   - font-zed-sans
+  - ghostty
   - gpg-suite
+  - hazel
   - hex-fiend
+  - iterm2
+  - itermai
   - kaleidoscope
   - keyboard-maestro
+  - latest
   - linearmouse
   - little-snitch
-  - logitech-g-hub
   - mactex
   - netnewswire
   - obs
