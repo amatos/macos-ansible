@@ -2,10 +2,13 @@
 askpass_program_path: "{{ playbook_dir }}/bin/mac-askpass.sh"
 configure_dotfiles: false
 configure_terminal: false
-configure_macos: true
+configure_macos: false
 install_mas_apps: true
 configure_pam_touchid: true
 configure_homebrew: true
+
+# Specify in config.yaml
+user: [name: "", email: "", gpg_key: ""]
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
@@ -28,7 +31,7 @@ dotfiles_files:
   - .macos
   - .vimrc
 
-macos_script: "~/.local/bin/customize-macos.sh --no-restart"
+macos_script: "bin/customize-macos.sh --no-restart"
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
