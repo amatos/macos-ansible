@@ -129,28 +129,28 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - 1password
-  - 1password-cli
-  - airfoil
-  - arq
-  - audio-hijack
-  - automounterhelper
-  - bbedit
-  - betterdiscord-installer
-  - betterdisplay
-  - claude
-  - claude-code
-  - cleanshot
-  - crossover
-  - discord
-  - dracula-betterdiscord
-  - dracula-macos-color-picker
-  - dracula-xcode
-  - elgato-capture-device-utility
-  - elgato-stream-deck
-  - elgato-studio
-  - fission
-  - focusrite-control-2
+  - 1password # Password manager that keeps all passwords secure behind one password
+  - 1password-cli # Command-line interface for 1Password
+  - airfoil # Sends audio from computer to outputs
+  - arq # Multi-cloud backup application
+  - audio-hijack # Records audio from any application
+  - automounterhelper # Helper for AutoMounter to mount shares to custom locations
+  - bbedit # Text, code, and markup editor
+  - betterdiscord-installer # Installer for BetterDiscord
+  - betterdisplay # Display management tool
+  - claude # Anthropic's official Claude AI desktop app
+  - claude-code # Terminal-based AI coding assistant
+  - cleanshot # Screen capturing tool
+  - crossover # Tool to run Windows software
+  - discord # Voice and text chat software
+  - dracula-betterdiscord # Dark theme for BetterDiscord
+  - dracula-macos-color-picker # Dark theme for the native Color Picker
+  - dracula-xcode # Dark theme for Xcode
+  - elgato-capture-device-utility # Update and configure Elgato Capture devices
+  - elgato-stream-deck # Assign keys, and then decorate and label them
+  - elgato-studio # Capture and manage Elgato devices for content creation
+  - fission # Audio editor
+  - focusrite-control-2 # Focusrite interface controller for devices of the 4th generation and newer
   - font-anonymous-pro
   - font-dejavu-sans-mono-nerd-font
   - font-inconsolata
@@ -164,35 +164,35 @@ homebrew_cask_apps:
   - font-zed-mono
   - font-zed-mono-nerd-font
   - font-zed-sans
-  - ghostty
-  - gpg-suite@nightly
-  - hazel
-  - helium-browser
-  - hex-fiend
-  - iina
-  - inkscape
-  - jetbrains-toolbox
-  - kaleidoscope
-  - keyboard-maestro
-  - latest
-  - linearmouse
-  - little-snitch
-  - mactex
-  - obs
-  - obsidian
-  - pixelsnap
-  - plistedit-pro
-  - powerphotos
-  - raycast
-  - setapp
-  - skim
-  - soundsource
-  - spamsieve
-  - spotify
-  - steam
-  - syncthing-app
-  - texstudio
-  - tower
-  - winbox
-  - zed
-  - zoom
+  - ghostty # Terminal emulator that uses platform-native UI and GPU acceleration
+  - gpg-suite@nightly # Tools to protect your emails and files
+  - hazel # Automated organisation
+  - helium-browser # Chromium-based web browser
+  - hex-fiend # Hex editor focussing on speed
+  - iina # Free and open-source media player
+  - inkscape # Vector graphics editor
+  - jetbrains-toolbox # JetBrains tools manager
+  - kaleidoscope # Spot and merge differences in text and image files or folders
+  - keyboard-maestro # Automation software
+  - latest # Utility that shows the latest app updates
+  - linearmouse # Customise mouse behavior
+  - little-snitch # Host-based application firewall
+  - mactex # Full TeX Live distribution with GUI applications
+  - obs # Open-source software for live streaming and screen recording
+  - obsidian # Knowledge base that works on top of a local folder of plain text Markdown files
+  - pixelsnap # Screen measuring tool
+  - plistedit-pro # Property list and JSON editor
+  - powerphotos # Tool to organise photo libraries
+  - raycast # Control your tools with a few keystrokes
+  - setapp # Collection of apps available by subscription
+  - skim # PDF reader and note-taking application
+  - soundsource # Sound and audio controller
+  - spamsieve # Spam filtering extension for e-mail clients
+  - spotify # Music streaming service
+  - steam # Video game digital distribution service
+  - syncthing-app # Real time file synchronisation software
+  - texstudio # LaTeX editor
+  - tower # Git client focusing on power and productivity
+  - winbox # Administration tool for MikroTik RouterOS
+  - zed # Multiplayer code editor
+  - zoom # Video communication and virtual meeting platform
