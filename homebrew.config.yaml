@@ -144,7 +144,7 @@ homebrew_cask_apps:
   - crossover # Tool to run Windows software
   - discord # Voice and text chat software
   - dracula-betterdiscord # Dark theme for BetterDiscord
-  - dracula-macos-color-picker # Dark theme for the native Color Picker
+  # - dracula-macos-color-picker # Dark theme for the native Color Picker
   - dracula-xcode # Dark theme for Xcode
   - elgato-capture-device-utility # Update and configure Elgato Capture devices
   - elgato-stream-deck # Assign keys, and then decorate and label them
