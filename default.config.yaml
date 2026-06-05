@@ -39,7 +39,7 @@ dotfiles_files:
   - .macos
   - .vimrc
 
-macos_script: "bin/customize-macos.sh --no-restart"
+macos_script: "{{ playbook_dir }}/bin/customize-macos.sh --no-restart"
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
