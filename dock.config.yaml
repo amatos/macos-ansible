@@ -1,10 +1,11 @@
 ---
 dockutil_install: true
-dockitems_remove: []
-  # - Launchpad
-  # - TV
-  # - Podcasts
-  # - "App Store"
+dockitems_remove:
+  - Calendar
+  - Reminders
+  - Notes
+  - Games
+  - Maps
 dockitems_persist:
   - name: "Apps"
     path: "/System/Applications/Apps.app/"
@@ -42,21 +43,24 @@ dockitems_persist:
   - name: "Photos"
     path: "/System/Applications/Photos.app/"
     pos: 12
-  - name: "iPhone Mirroring"
-    path: "/System/Applications/iPhone Mirroring.app/"
+  - name: "TV"
+    path: "/System/Applications/TV.app/"
     pos: 13
+  - name: "App Store"
+    path: "/System/Applications/App Store.app/"
+    pos: 14
   - name: "System Settings"
     path: "/System/Applications/System Settings.app/"
-    pos: 14
+    pos: 15
   - name: "Preview"
     path: "/System/Applications/Preview.app/"
-    pos: 15
+    pos: 16
   - name: "Zed"
     path: "/Applications/Zed.app/"
-    pos: 16
+    pos: 17
   - name: "Ghostty"
     path: "/Applications/Ghostty.app/"
-    pos: 17
-# - name: "Sublime Text"
-#   path: "/Applications/Sublime Text.app/"
-#   pos: 5
+    pos: 18
+  - name: "Claude"
+    path: "/Applications/Claude.app/"
+    pos: 19

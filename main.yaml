@@ -17,14 +17,14 @@
 
   roles:
     - role: elliotweiser.osx-command-line-tools
-    - role: geerlingguy.mac.homebrew
-      tags: ["homebrew"]
     - role: geerlingguy.dotfiles
       when: configure_dotfiles
       tags: ["dotfiles"]
-    - role: geerlingguy.mac.mas
-      when: install_mas_apps
-      tags: ["mas"]
+    # - role: geerlingguy.mac.homebrew
+    #   tags: ["homebrew"]
+    # - role: geerlingguy.mac.mas
+    #   when: install_mas_apps
+    #   tags: ["mas"]
     - role: geerlingguy.mac.dock
       when: configure_dock
       tags: ["dock"]
@@ -32,6 +32,14 @@
   tasks:
     - import_tasks: tasks/gpg.yaml
       tags: ["gpg"]
+
+    - import_tasks: tasks/pam-touchid.yaml
+      when: configure_pam_touchid
+      tags: ["pam-touchid"]
+
+    - import_tasks: tasks/homebrew.yaml
+      when: configure_homebrew
+      tags: ["homebrew"]
 
     - import_tasks: tasks/sudoers.yaml
       when: configure_sudoers

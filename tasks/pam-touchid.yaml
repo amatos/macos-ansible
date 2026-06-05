@@ -1,0 +1,14 @@
+- name: Create sudo_local for touchid
+  ansible.builtin.copy:
+    dest: /etc/pam.d/sudo_local
+    content: |
+      auth       sufficient     pam_tid.so
+    owner: root
+    group: wheel
+    mode: "0644"
+  become: true
+  environment:
+    # 1. Provide the path to your executable helper program
+    SUDO_ASKPASS: "{{ askpass_program_path }}"
+    # 2. Force child tasks to look for the askpass binary
+    SUDO_FLAGS: "-A"

@@ -4,95 +4,195 @@
 homebrew_upgrade_all_packages: true
 
 homebrew_installed_packages:
-  - atuin
-  - autoconf
-  - bash-completion
-  - bat
-  - btop
-  - chezmoi
-  - cowsay
-  - diff-so-fancy
-  - doxygen
-  - fastfetch
-  - fish
-  - fortune
-  - gettext
-  - gh
-  - gifsicle
-  - go
-  - gum
-  - httpie
-  - iperf
-  - jello
-  - lazygit
-  - libevent
-  - lsd
-  - neovim
-  - nmap
-  - node
-  - nvm
-  - openssl
-  - php
-  - pngpaste
-  - pv
-  - python-packaging
-  - readline
-  - sqlite
-  - starship
-  - wget
-  - wrk
-  - zsh-history-substring-search
-  - texlab
+  - act # Run your GitHub Actions locally
+  - ansible-lint # Checks ansible playbooks for practices and behaviour
+  - atuin # Improved shell history for zsh, bash, fish and nushell
+  - autoconf # Automatic configure script builder
+  - bandwhich # Terminal bandwidth utilization tool
+  - bash # Bourne-Again SHell, a UNIX command interpreter
+  - bash-completion # Programmable completion for Bash 3.2
+  - bat # Clone of cat(1) with syntax highlighting and Git integration
+  - bfg # Remove large files or passwords from Git history like git-filter-branch
+  - black # Python code formatter
+  - btop # Resource monitor. C++ version and continuation of bashtop and bpytop
+  - chezmoi # Manage your dotfiles across multiple diverse machines, securely
+  - cmake # Cross-platform make
+  - cowsay # Apjanke's fork of the classic cowsay project
+  - create-dmg # Shell script to build fancy DMGs
+  - delve # Debugger for the Go programming language
+  - diff-so-fancy # Good-lookin' diffs with diff-highlight and more
+  - direnv # Load/unload environment variables based on $PWD
+  - dockutil # Tool for managing dock items
+  - dos2unix # Convert text between DOS, UNIX, and Mac formats
+  - doxygen # Generate documentation for several programming languages
+  - exiftool # Perl lib for reading and writing EXIF metadata
+  - eza # Modern, maintained replacement for ls
+  - fastfetch # Like neofetch, but much faster because written mostly in C
+  - ffmpeg # Play, record, convert, and stream select audio and video codecs
+  - fish # User-friendly command-line shell for UNIX-like operating systems
+  - fish-lsp # LSP implementation for the fish shell language
+  - fisher # Plugin manager for the Fish shell
+  - fortune # Infamous electronic fortune-cookie generator
+  - fzf # Command-line fuzzy finder written in Go
+  - gettext # GNU internationalization (i18n) and localization (l10n) library
+  - gh # GitHub command-line tool
+  - ghostscript # Interpreter for PostScript and PDF
+  - gifsicle # GIF image/animation creator/editor
+  - git-extras # Small git utilities
+  - git-flow # Extensions to follow Vincent Driessen's branching model
+  - git-lfs # Git extension for versioning large files
+  - git-town # High-level command-line interface for Git
+  - go # Open source programming language to build simple/reliable/efficient software
+  - golangci-lint # Fast linters runner for Go
+  - gradle # Open-source build automation tool based on the Groovy and Kotlin DSL
+  - graphviz # Graph visualization software from AT&T and Bell Labs
+  - groovy # Java-based scripting language
+  - gum # Tool for glamorous shell scripts
+  - htmlq # Uses CSS selectors to extract bits content from HTML files
+  - htop # Improved top (interactive process viewer)
+  - httpie # User-friendly cURL replacement (command-line HTTP client)
+  - imagemagick # Tools and libraries to manipulate images in select formats
+  - iperf # Tool to measure maximum TCP and UDP bandwidth
+  - jello # Filter JSON and JSON Lines data with Python syntax
+  - jenv # Manage your Java environment
+  - jhead # Extract Digicam setting info from EXIF JPEG headers
+  - lazygit # Simple terminal UI for git commands
+  - libevent # Asynchronous event library
+  - lsd # Clone of ls with colorful output, file type icons, and more
+  - lua # Powerful, lightweight programming language
+  - luajit # Just-In-Time Compiler (JIT) for the Lua programming language
+  - mactop # Apple Silicon Monitor Top written in Go Lang
+  - make # Utility for directing compilation
+  - maven # Java-based project management
+  - neovim # Ambitious Vim-fork focused on extensibility and agility
+  - nmap # Port scanning utility for large networks
+  - node # Open-source, cross-platform JavaScript runtime environment
+  - openjdk # Development kit for the Java programming language
+  - openjdk@11 # Development kit for the Java programming language
+  - openjdk@17 # Development kit for the Java programming language
+  - openjdk@21 # Development kit for the Java programming language
+  - openssl # Cryptography and SSL/TLS Toolkit
+  - php # General-purpose scripting language
+  - pipx # Execute binaries from Python packages in isolated environments
+  - plantuml # Draw UML diagrams
+  - pngpaste # Paste PNG into files
+  - poppler # PDF rendering library (based on the xpdf-3.0 code base)
+  - pstree # Show ps output as a tree
+  - pv # Monitor data's progress through a pipe
+  - pyenv # Python version management
+  - pylint # It's not just a linter that annoys you!
+  - pyrefly # Fast type checker and IDE for Python
+  - python # Interpreted, interactive, object-oriented programming language
+  - python-packaging # Core utilities for Python packages
+  - qrencode # QR Code generation
+  - rbenv # Ruby version manager
+  - readline # Library for command-line editing
+  - ripgrep # Search tool like grep and The Silver Searcher
+  - rust # Safe, concurrent, practical language
+  - rustup # Rust toolchain installer
+  - scc # Fast and accurate code counter with complexity and COCOMO estimates
+  - sesh # Smart session manager for the terminal
+  - shellcheck # Static analysis and lint tool, for (ba)sh scripts
+  - shfmt # Autoformat shell script source code
+  - sq # Data wrangler with jq-like query language
+  - sqlite # Command-line interface for SQLite
+  - starship # Cross-shell prompt for astronauts
+  - staticcheck # State of the art linter for the Go programming language
+  - tea # Command-line tool to interact with Gitea servers
+  - tealdeer # Very fast implementation of tldr in Rust
+  - terminal-notifier # Send macOS User Notifications from the command-line
+  - texlab # Implementation of the Language Server Protocol for LaTeX
+  - tmux # Terminal multiplexer
+  - tpm # Plugin manager for tmux
+  - tre-command # Tree command, improved
+  - tree # Display directories as trees (with optional color/HTML output)
+  - walk # Terminal navigator
+  - watch # Executes a program periodically, showing output fullscreen
+  - wget # Internet file retriever
+  - wrk # HTTP benchmarking tool
+  - xz # General-purpose data compression with high compression ratio
+  - yamllint # Linter for YAML files
+  - yazi # Blazing fast terminal file manager written in Rust, based on async I/O
+  - yq # Process YAML, JSON, XML, CSV and properties documents from the CLI
+  - yt-dlp # Feature-rich command-line audio/video downloader
+  - zapp # Flash ZSA keyboards from your terminal
+  - zbar # Suite of barcodes-reading tools
+  - zoxide # Shell extension to navigate your filesystem faster
+  - zsh # UNIX shell (command interpreter)
+  - zsh-history-substring-search # Zsh port of Fish shell's history search
+  - zstd # Zstandard is a real-time compression algorithm
 
-homebrew_taps: ["domt4/autoupdate"]
+homebrew_taps:
+  - "buo/cask-upgrade"
+  - "domt4/autoupdate"
+  - "dracula/install"
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - 1password
   - 1password-cli
-  - adobe-creative-cloud
-  - adobe-dng-converter
   - airfoil
-  - alcove
-  - alfred
-  - ammonite
+  - arq
   - audio-hijack
-  - autodesk-fusion
+  - automounterhelper
   - bbedit
+  - betterdiscord-installer
   - betterdisplay
+  - claude
+  - claude-code
+  - cleanshot
+  - crossover
   - discord
+  - dracula-betterdiscord
+  - dracula-macos-color-picker
+  - dracula-xcode
   - elgato-capture-device-utility
   - elgato-stream-deck
+  - elgato-studio
   - fission
+  - focusrite-control-2
+  - font-anonymous-pro
+  - font-dejavu-sans-mono-nerd-font
+  - font-inconsolata
+  - font-inconsolata-go-nerd-font
+  - font-iosevka
+  - font-jetbrains-mono
   - font-jetbrains-mono-nerd-font
+  - font-liberation
   - font-sf-mono-nerd-font-ligaturized
+  - font-tengwar-telcontar
   - font-zed-mono
   - font-zed-mono-nerd-font
   - font-zed-sans
   - ghostty
-  - gpg-suite
+  - gpg-suite@nightly
   - hazel
+  - helium-browser
   - hex-fiend
-  - iterm2
-  - itermai
+  - iina
+  - inkscape
+  - jetbrains-toolbox
   - kaleidoscope
   - keyboard-maestro
   - latest
   - linearmouse
   - little-snitch
   - mactex
-  - netnewswire
   - obs
   - obsidian
+  - pixelsnap
+  - plistedit-pro
+  - powerphotos
+  - raycast
   - setapp
   - skim
-  - slack
   - soundsource
+  - spamsieve
+  - spotify
   - steam
   - syncthing-app
   - texstudio
   - tower
-  - vuescan
   - winbox
   - zed
   - zoom

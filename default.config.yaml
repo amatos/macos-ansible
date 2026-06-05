@@ -1,8 +1,11 @@
 ---
+askpass_program_path: "{{ playbook_dir }}/bin/mac-askpass.sh"
 configure_dotfiles: false
 configure_terminal: false
 configure_macos: true
 install_mas_apps: true
+configure_pam_touchid: true
+configure_homebrew: true
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
@@ -16,8 +19,8 @@ sudoers_custom_config: ""
 
 dotfiles_repo: https://github.com/amatos/dotfiles.git
 dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
-dotfiles_repo_version: macos # Replace with your default branch
+dotfiles_repo_local_destination: ~/Projects/dotfiles
+dotfiles_repo_version: main # Replace with your default branch
 dotfiles_files:
   - .zshrc
   - .gitignore

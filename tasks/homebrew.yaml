@@ -1,0 +1,11 @@
+---
+- name: Install Homebrew Casks
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_cask_apps }}"
+  environment:
+    # 1. Provide the path to your executable helper program
+    SUDO_ASKPASS: "{{ askpass_program_path }}"
+    # 2. Force child tasks to look for the askpass binary
+    SUDO_FLAGS: "-A"
