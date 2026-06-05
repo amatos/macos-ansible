@@ -7,8 +7,14 @@ install_mas_apps: true
 configure_pam_touchid: true
 configure_homebrew: true
 
-# Specify in config.yaml
-user: [name: "", email: "", gpg_key: ""]
+# Specify overrides in config.yaml
+user:
+  name: ""
+  email: ""
+  gpg_key: "" # email address used for WKD key lookup
+
+configure_gpg: false
+gpg_keyserver: keys.openpgp.org
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true

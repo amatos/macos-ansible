@@ -1,5 +1,30 @@
 ---
-- name: install key from default keyserver on target machine
-  gpg_key:
-    fpr: 5FC8FE1141FA769594E91E48F41BDBF6171A3BB4
-    trust: 5
+# Fetches the public key for user.gpg_key (an email address), trying WKD first
+# then falling back to gpg_keyserver, imports it, and sets ownertrust to ultimate (5).
+#
+# Enable with configure_gpg: true and set user.gpg_key in config.yaml.
+
+- name: Fetch GPG public key for {{ user.gpg_key }} (WKD then {{ gpg_keyserver }})
+  ansible.builtin.command:
+    cmd: gpg --keyserver "hkps://{{ gpg_keyserver }}" --auto-key-locate clear,wkd,keyserver --locate-keys "{{ user.gpg_key }}"
+  register: gpg_locate
+  changed_when: "'imported' in gpg_locate.stderr"
+
+- name: Get fingerprint for {{ user.gpg_key }}
+  ansible.builtin.shell:
+    cmd: "gpg --list-keys --with-colons '{{ user.gpg_key }}' | awk -F: '/^fpr/{print $10; exit}'"
+  register: gpg_fpr
+  changed_when: false
+
+- name: Check current ownertrust level
+  ansible.builtin.shell:
+    cmd: gpg --export-ownertrust | grep -c "{{ gpg_fpr.stdout | trim }}:5:"
+  register: gpg_trust_check
+  changed_when: false
+  failed_when: false  # grep exits 1 when there are no matches
+
+- name: Set ownertrust to ultimate (5) for {{ user.gpg_key }}
+  ansible.builtin.command:
+    cmd: gpg --import-ownertrust
+    stdin: "{{ gpg_fpr.stdout | trim }}:5:\n"
+  when: (gpg_trust_check.stdout | int) == 0

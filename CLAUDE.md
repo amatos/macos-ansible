@@ -25,6 +25,7 @@ Run only specific sections using tags:
 ```bash
 ansible-playbook main.yaml --ask-become-pass --tags homebrew
 ansible-playbook main.yaml --ask-become-pass --tags dock
+ansible-playbook main.yaml --ask-become-pass --tags gpg
 ansible-playbook main.yaml --ask-become-pass --tags pam-touchid
 ansible-playbook main.yaml --ask-become-pass --tags osx
 ansible-playbook main.yaml --ask-become-pass --tags sudoers

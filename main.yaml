@@ -31,6 +31,7 @@
 
   tasks:
     - import_tasks: tasks/gpg.yaml
+      when: configure_gpg
       tags: ["gpg"]
 
     - import_tasks: tasks/pam-touchid.yaml
