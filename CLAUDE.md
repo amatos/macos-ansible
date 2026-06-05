@@ -87,6 +87,13 @@ Several roles are commented out in `main.yaml` (Homebrew via `geerlingguy.mac.ho
 - **Mac App Store app**: add `{ id: <app_id>, name: "<Name>" }` to `mas_installed_apps` in `mas.config.yaml`
 - **Dock item**: add entry to `dockitems_persist` in `dock.config.yaml`
 
+## Supporting scripts
+
+Any supporting scripts or programs (helpers, one-off utilities, maintenance tools) should live in `./bin/`. For example:
+
+- `bin/mac_askpass.sh` — AppleScript sudo helper used by Ansible tasks
+- `bin/annotate_packages.py` — annotates `homebrew_installed_packages` entries with `brew desc` descriptions
+
 ## Custom Ansible module
 
 `modules/ansible-gpg-key/` contains a local GPG key management module, referenced in `ansible.cfg` via `library = modules/ansible-gpg-key`. The GPG task (`tasks/gpg.yaml`) is currently commented out in `main.yaml`.
