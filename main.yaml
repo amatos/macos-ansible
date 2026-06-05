@@ -3,6 +3,7 @@
   hosts: all
 
   vars_files:
+    - config.yaml
     - default.config.yaml
     - homebrew.config.yaml
     - mas.config.yaml
@@ -17,14 +18,14 @@
 
   roles:
     - role: elliotweiser.osx-command-line-tools
-    - role: geerlingguy.dotfiles
-      when: configure_dotfiles
+    - role: hussainweb.chezmoi
+      vars:
+        chezmoi_init_url: "{{ chezmoi_dotfiles_repo }}"
+      when: configure_dotfiles | bool
       tags: ["dotfiles"]
-    # - role: geerlingguy.mac.homebrew
-    #   tags: ["homebrew"]
-    # - role: geerlingguy.mac.mas
-    #   when: install_mas_apps
-    #   tags: ["mas"]
+    - role: geerlingguy.mac.mas
+      when: install_mas_apps
+      tags: ["mas"]
     - role: geerlingguy.mac.dock
       when: configure_dock
       tags: ["dock"]

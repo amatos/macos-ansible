@@ -1,8 +1,8 @@
 ---
 askpass_program_path: "{{ playbook_dir }}/bin/mac-askpass.sh"
-configure_dotfiles: false
+configure_dotfiles: true
 configure_terminal: false
-configure_macos: false
+configure_macos: true
 install_mas_apps: true
 configure_pam_touchid: true
 configure_homebrew: true
@@ -10,8 +10,10 @@ configure_homebrew: true
 # Specify overrides in config.yaml
 user:
   name: ""
-  email: ""
-  gpg_key: "" # email address used for WKD key lookup
+  email: "" # email address used for WKD key lookup
+  gpg_key: ""
+
+chezmoi_dotfiles_repo: ""
 
 configure_gpg: false
 gpg_keyserver: keys.openpgp.org

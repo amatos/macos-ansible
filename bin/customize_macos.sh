@@ -92,12 +92,12 @@ sudo systemsetup -setusingnetworktime on
 # defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 # Expand save panel by default
-# defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-# defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 
 # Expand print panel by default
-# defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-# defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
 # Save to disk (not to iCloud) by default
 # defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -106,7 +106,7 @@ sudo systemsetup -setusingnetworktime on
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Disable the “Are you sure you want to open this application?” dialog
-# defaults write com.apple.LaunchServices LSQuarantine -bool false
+defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Disable Resume system-wide
 # defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
@@ -127,7 +127,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
-# defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Disable press-and-hold for keys in favor of key repeat
 # defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
@@ -137,7 +137,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # Automatically illuminate built-in MacBook keyboard in low light
-# defaults write com.apple.BezelServices kDim -bool true
+defaults write com.apple.BezelServices kDim -bool true
 
 # Turn off keyboard illumination when computer is not used for 5 minutes
 # defaults write com.apple.BezelServices kDimTime -int 300
@@ -174,8 +174,8 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 ###############################################################################
 
 # Require password immediately after sleep or screen saver begins
-# defaults write com.apple.screensaver askForPassword -int 1
-# defaults write com.apple.screensaver askForPasswordDelay -int 0
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 5
 
 # Save screenshots to the ~/Screenshots folder
 mkdir -p "${SCREENSHOTS_FOLDER}"
@@ -274,10 +274,10 @@ defaults write com.apple.dock showhidden -bool true
 # defaults write com.apple.dock no-bouncing -bool true
 
 # Disable hot corners
-# defaults write com.apple.dock wvous-tl-corner -int 0
-# defaults write com.apple.dock wvous-tr-corner -int 0
-# defaults write com.apple.dock wvous-bl-corner -int 0
-# defaults write com.apple.dock wvous-br-corner -int 0
+defaults write com.apple.dock wvous-tl-corner -int 0
+defaults write com.apple.dock wvous-tr-corner -int 0
+defaults write com.apple.dock wvous-bl-corner -int 0
+defaults write com.apple.dock wvous-br-corner -int 0
 
 # Don't show recently used applications in the Dock
 # defaults write com.Apple.Dock show-recents -bool false
@@ -371,16 +371,16 @@ defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
 # defaults write com.apple.SoftwareUpdate ScheduleFrequency -string 7
 
 # Download newly available updates in background
-# defaults write com.apple.SoftwareUpdate AutomaticDownload -bool true
+defaults write com.apple.SoftwareUpdate AutomaticDownload -bool true
 
 # Install System data files & security updates
-# defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -bool true
+defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -bool true
 
 # Turn on app auto-update
-# defaults write com.apple.commerce AutoUpdate -bool true
+defaults write com.apple.commerce AutoUpdate -bool true
 
 # Allow the App Store to reboot machine on macOS updates
-# defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
+defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 
 ###############################################################################
 # Kill affected applications                                                  #
