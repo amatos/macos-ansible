@@ -6,8 +6,10 @@
 mas_email: ""
 mas_password: ""
 
-# Run `mas upgrade` to upgrade all installed apps
-mas_upgrade_all_apps: true
+# Run `mas upgrade` to upgrade all installed apps.
+# Disabled by default — mas upgrade is unreliable on macOS Ventura and later
+# due to App Store API restrictions. Let the App Store handle updates instead.
+mas_upgrade_all_apps: false
 
 mas_installed_apps:
   - { id: 1006739057, name: "NepTunes" }
