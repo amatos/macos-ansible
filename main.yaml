@@ -23,9 +23,6 @@
         chezmoi_init_url: "{{ chezmoi_dotfiles_repo }}"
       when: configure_dotfiles | bool
       tags: ["dotfiles"]
-    - role: geerlingguy.mac.mas
-      when: install_mas_apps
-      tags: ["mas"]
     - role: geerlingguy.mac.dock
       when: configure_dock
       tags: ["dock"]
@@ -54,6 +51,10 @@
     - import_tasks: tasks/macos.yaml
       when: configure_macos
       tags: ["osx"]
+
+    - import_tasks: tasks/mas.yaml
+      when: install_mas_apps | bool
+      tags: ["mas"]
 
     - import_tasks: tasks/extra-packages.yaml
       tags: ["extra-packages"]

@@ -1,0 +1,52 @@
+---
+# Installs Mac App Store apps via the community.general.mas module.
+# Requires `mas` CLI to be installed (handled by preflight.sh) and the
+# user to be signed in to the App Store.
+#
+# pam_tid.so (TouchID for sudo) is temporarily disabled before running mas
+# because mas uses sudo internally and hangs waiting for TouchID when it is
+# active. It is re-enabled in an always block after mas completes.
+#
+# Enable with install_mas_apps: true in config.yaml.
+# Apps are defined in mas.config.yaml under mas_installed_apps.
+
+- name: Check whether pam_tid.so is enabled in /etc/pam.d/sudo_local
+  ansible.builtin.command:
+    cmd: grep -q '^auth.*pam_tid\.so' /etc/pam.d/sudo_local
+  register: pam_tid_check
+  changed_when: false
+  failed_when: false
+  become: true
+
+- name: Install Mac App Store apps
+  block:
+    - name: Disable pam_tid.so in /etc/pam.d/sudo_local
+      ansible.builtin.replace:
+        path: /etc/pam.d/sudo_local
+        regexp: '^(auth.*pam_tid\.so.*)$'
+        replace: '#\1'
+      become: true
+      when: pam_tid_check.rc == 0
+
+    - name: Upgrade all installed App Store apps
+      community.general.mas:
+        upgrade_all: true
+      when: mas_upgrade_all_apps | bool
+      failed_when: false # mas upgrade is unreliable on Ventura+; don't abort the play
+
+    - name: Install Mac App Store apps
+      community.general.mas:
+        id: "{{ item.id }}"
+        state: present
+      loop: "{{ mas_installed_apps }}"
+      loop_control:
+        label: "{{ item.name }}"
+
+  always:
+    - name: Re-enable pam_tid.so in /etc/pam.d/sudo_local
+      ansible.builtin.replace:
+        path: /etc/pam.d/sudo_local
+        regexp: '^#(auth.*pam_tid\.so.*)$'
+        replace: '\1'
+      become: true
+      when: pam_tid_check.rc == 0
