@@ -166,6 +166,7 @@ homebrew_cask_apps:
   - font-zed-mono-nerd-font
   - font-zed-sans
   - ghostty # Terminal emulator that uses platform-native UI and GPU acceleration
+  - google-chrome # Chromium-based web browser
   - gpg-suite@nightly # Tools to protect your emails and files
   - hazel # Automated organisation
   - helium-browser # Chromium-based web browser
