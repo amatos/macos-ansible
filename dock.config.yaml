@@ -16,51 +16,57 @@ dockitems_persist:
   - name: "Helium"
     path: "/Applications/Helium.app/"
     pos: 3
+  - name: "Chrome"
+    path: "/Applications/Google Chrome.app/"
+    pos: 4
   - name: "Mail"
     path: "/System/Applications/Mail.app/"
-    pos: 4
+    pos: 5
   - name: "Messages"
     path: "/System/Applications/Messages.app/"
-    pos: 5
+    pos: 6
   - name: "Phone"
     path: "/System/Applications/Phone.app/"
-    pos: 6
+    pos: 7
   - name: "FaceTime"
     path: "/System/Applications/FaceTime.app/"
-    pos: 7
-  - name: "Fantastical"
-    path: "/Applications/Fantastical.app/"
     pos: 8
+  - name: "Fantastical"
+    path: "/System/Applications/Calendar.app/"
+    pos: 9
   - name: "Contacts"
     path: "/System/Applications/Contacts.app/"
-    pos: 9
+    pos: 10
   - name: "News"
     path: "/System/Applications/News.app/"
-    pos: 10
+    pos: 11
   - name: "Music"
     path: "/System/Applications/Music.app/"
-    pos: 11
+    pos: 12
   - name: "Photos"
     path: "/System/Applications/Photos.app/"
-    pos: 12
+    pos: 13
   - name: "TV"
     path: "/System/Applications/TV.app/"
-    pos: 13
+    pos: 14
   - name: "App Store"
     path: "/System/Applications/App Store.app/"
-    pos: 14
+    pos: 15
   - name: "System Settings"
     path: "/System/Applications/System Settings.app/"
-    pos: 15
+    pos: 16
   - name: "Preview"
     path: "/System/Applications/Preview.app/"
-    pos: 16
+    pos: 17
   - name: "Zed"
     path: "/Applications/Zed.app/"
-    pos: 17
+    pos: 18
   - name: "Ghostty"
     path: "/Applications/Ghostty.app/"
-    pos: 18
+    pos: 19
   - name: "Claude"
     path: "/Applications/Claude.app/"
-    pos: 19
+    pos: 20
+  - name: "Siri"
+    path: "/System/Applications/Campo.app/"
+    pos: 21
