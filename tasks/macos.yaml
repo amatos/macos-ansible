@@ -1,5 +1,109 @@
 ---
 # TODO: Use sudo once .macos can be run via root with no user interaction.
+- name: Set macOS hostname
+  become: true
+  ansible.builtin.command: "{{ item }}"
+  loop:
+    - "scutil --set HostName {{macos_hostname }}"
+    - "scutil --set LocalHostName {{macos_hostname }}"
+    - "scutil --set ComputerName {{macos_hostname }}"
+  changed_when: true
+
+- name: Configure Finder preferences
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  loop:
+    - {
+        key: AppleShowAllFiles,
+        type: bool,
+        value: "{{ macos.Finder.AppleShowAllFiles }}",
+      }
+    - { key: ShowPathbar, type: bool, value: "{{ macos.Finder.ShowPathbar }}" }
+    - {
+        key: ShowStatusBar,
+        type: bool,
+        value: "{{ macos.Finder.ShowStatusBar }}",
+      }
+    - {
+        key: _FXShowPosixPathInTitle,
+        type: bool,
+        value: "{{ macos.Finder._FXShowPosixPathInTitle }}",
+      }
+
+- name: Configure Dock preferences
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  loop:
+    - { key: autohide, type: bool, value: "{{ macos.Dock.autohide }}" }
+    - {
+        key: minimize-to-application,
+        type: bool,
+        value: "{{ macos.Dock.minimizeToApplication }}",
+      }
+    - { key: tilesize, type: int, value: "{{ macos.Dock.tilesize }}" }
+  notify: restart dock
+
+- name: Disable auto-correct
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticSpellingCorrectionEnabled
+    type: bool
+    value: "{{ macos.AutomaticSpellingCorrectionEnabled }}"
+
+- name: Enable firewall
+  become: true
+  ansible.builtin.command: /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+  changed_when: macos.enableFirewall
+
+- name: Enable stealth mode
+  become: true
+  ansible.builtin.command: /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
+  changed_when: macos.enableStealthMode
+
+- name: Enable SSH (Remote Login)
+  become: true
+  ansible.builtin.command: systemsetup -setremotelogin on
+  changed_when: macos.enableSsh
+
+- name: Harden SSH
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  loop:
+    - { regexp: "^#?PasswordAuthentication", line: "PasswordAuthentication no" }
+    - { regexp: "^#?PermitRootLogin", line: "PermitRootLogin no" }
+  notify: restart sshd
+
+- name: Create common directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: "0755"
+  loop:
+    - "{{ lookup('env', 'HOME') }}/Projects"
+    - "{{ lookup('env', 'HOME') }}/Developer"
+    - "{{ lookup('env', 'HOME') }}/.ssh"
+    - "{{ lookup('env', 'HOME') }}/temp"
+
+- name: Create src symlink pointing to Developer
+  ansible.builtin.file:
+    src: "{{ lookup('env', 'HOME') }}/Developer"
+    dest: "{{ lookup('env', 'HOME') }}/src"
+    state: link
+
+- name: rosetta
+  block:
+    - name: install rosetta
+      ansible.builtin.shell: /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+
 - name: Run .macos dotfiles.
   command: "{{ macos_script }}"
   changed_when: false

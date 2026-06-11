@@ -1,4 +1,8 @@
 ---
+- name: Trust added taps
+  ansible.builtin.command:
+    cmd: "brew trust dracula/install"
+
 - name: Install Homebrew CLI apps
   community.general.homebrew:
     name: "{{ item }}"
@@ -9,6 +13,10 @@
     SUDO_ASKPASS: "{{ askpass_program_path }}"
     # 2. Force child tasks to look for the askpass binary
     SUDO_FLAGS: "-A"
+
+- name: Initialize tealdeer
+  ansible.builtin.command:
+    cmd: "tldr --update"
 
 - name: Install Homebrew Casks
   community.general.homebrew_cask:

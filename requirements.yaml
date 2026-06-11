@@ -1,8 +1,8 @@
 ---
 roles:
   - name: elliotweiser.osx-command-line-tools
-  - name: hussainweb.chezmoi
+  - name: wayofdev.homebrew
+  - name: wayofdev.dock
 
 collections:
-  - name: geerlingguy.mac
   - name: mistermiles.gpg_key_import

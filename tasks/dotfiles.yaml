@@ -1,0 +1,18 @@
+---
+- name: Install chezmoi via homebrew
+  when: configure_dotfiles | bool
+  community.general.homebrew:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - "chezmoi"
+    - "1password-cli"
+
+- name: Initialize chezmoi with dotfiles repository
+  ansible.builtin.command:
+    cmd: "chezmoi init {{ dotfiles_repo }}"
+    creates: "{{ lookup('env', 'HOME') }}/.local/share/chezmoi"
+
+- name: Apply the dotfiles managed by chezmoi
+  ansible.builtin.command:
+    cmd: "chezmoi apply"

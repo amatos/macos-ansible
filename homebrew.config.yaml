@@ -19,6 +19,7 @@ homebrew_installed_packages:
   - cmake # Cross-platform make
   - cowsay # Apjanke's fork of the classic cowsay project
   - create-dmg # Shell script to build fancy DMGs
+  - curl
   - delve # Debugger for the Go programming language
   - diff-so-fancy # Good-lookin' diffs with diff-highlight and more
   - direnv # Load/unload environment variables based on $PWD
@@ -38,10 +39,12 @@ homebrew_installed_packages:
   - gh # GitHub command-line tool
   - ghostscript # Interpreter for PostScript and PDF
   - gifsicle # GIF image/animation creator/editor
+  - git
   - git-extras # Small git utilities
   - git-flow # Extensions to follow Vincent Driessen's branching model
   - git-lfs # Git extension for versioning large files
   - git-town # High-level command-line interface for Git
+  - gnu-sed
   - go # Open source programming language to build simple/reliable/efficient software
   - golangci-lint # Fast linters runner for Go
   - gradle # Open-source build automation tool based on the Groovy and Kotlin DSL
@@ -56,6 +59,7 @@ homebrew_installed_packages:
   - jello # Filter JSON and JSON Lines data with Python syntax
   - jenv # Manage your Java environment
   - jhead # Extract Digicam setting info from EXIF JPEG headers
+  - jq
   - lazygit # Simple terminal UI for git commands
   - libevent # Asynchronous event library
   - lsd # Clone of ls with colorful output, file type icons, and more
@@ -76,8 +80,8 @@ homebrew_installed_packages:
   - pipx # Execute binaries from Python packages in isolated environments
   - plantuml # Draw UML diagrams
   - pngpaste # Paste PNG into files
-  - pre-commit # Framework for managing multi-language pre-commit hooks
   - poppler # PDF rendering library (based on the xpdf-3.0 code base)
+  - pre-commit # Framework for managing multi-language pre-commit hooks
   - pstree # Show ps output as a tree
   - pv # Monitor data's progress through a pipe
   - pyenv # Python version management
@@ -204,3 +208,4 @@ homebrew_cask_apps:
   - winbox # Administration tool for MikroTik RouterOS
   - zed # Multiplayer code editor
   - zoom # Video communication and virtual meeting platform
+  - visual-studio-code

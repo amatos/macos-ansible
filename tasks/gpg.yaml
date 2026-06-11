@@ -4,27 +4,30 @@
 #
 # Enable with configure_gpg: true and set user.gpg_key in config.yaml.
 
+- name: Check if GPG key is already in the keyring
+  ansible.builtin.command: gpg --list-keys {{ user.gpg_key }}
+  register: gpg_check
+  failed_when: false
+  changed_when: false
+
 - name: Fetch GPG public key for {{ user.gpg_key }} (WKD then {{ gpg_keyserver }})
-  ansible.builtin.command:
-    cmd: gpg --keyserver "hkps://{{ gpg_keyserver }}" --auto-key-locate clear,wkd,keyserver --locate-keys "{{ user.gpg_key }}"
-  register: gpg_locate
-  changed_when: "'imported' in gpg_locate.stderr"
+  ansible.builtin.command: gpg --keyserver "hkps://{{ gpg_keyserver }}" --auto-key-locate clear,wkd,keyserver --recv-keys {{ user.gpg_key }}
+  when: gpg_check.rc != 0
 
-- name: Get fingerprint for {{ user.gpg_key }}
-  ansible.builtin.shell:
-    cmd: "gpg --list-keys --with-colons '{{ user.gpg_key }}' | awk -F: '/^fpr/{print $10; exit}'"
-  register: gpg_fpr
+- name: Extract GPG key fingerprint
+  ansible.builtin.shell: |
+    gpg --list-keys --with-colons "{{ user.gpg_email }}" | grep '^fpr' | head -n 1 | cut -d: -f10
+  register: gpg_fingerprint
   changed_when: false
+  failed_when: gpg_fingerprint.stdout == ""
 
-- name: Check current ownertrust level
-  ansible.builtin.shell:
-    cmd: gpg --export-ownertrust | grep -c "{{ gpg_fpr.stdout | trim }}:5:"
-  register: gpg_trust_check
-  changed_when: false
-  failed_when: false  # grep exits 1 when there are no matches
+- name: Apply ultimate trust to the key
+  ansible.builtin.shell: |
+    echo "{{ gpg_fingerprint.stdout }}:6:" | gpg --import-ownertrust
+  register: trust_output
+  changed_when: "'unid' in trust_output.stdout or 'inserted' in trust_output.stderr"
 
-- name: Set ownertrust to ultimate (5) for {{ user.gpg_key }}
-  ansible.builtin.command:
-    cmd: gpg --import-ownertrust
-    stdin: "{{ gpg_fpr.stdout | trim }}:5:\n"
-  when: (gpg_trust_check.stdout | int) == 0
+- name: GPG configuration completed
+  register: gpg_configured
+  ansible.builtin.debug:
+    msg: "GPG configuration completed for {{ user.gpg_key }}."

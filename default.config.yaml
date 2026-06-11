@@ -13,10 +13,45 @@ user:
   email: "" # email address used for WKD key lookup
   gpg_key: ""
 
+macos_hostname: "{{ user.name }}s Mac"
 chezmoi_dotfiles_repo: ""
 
-configure_gpg: false
+macos:
+  Finder:
+    AppleShowAllFiles: true
+    ShowPathbar: true
+    ShowStatusBar: true
+    _FXShowPosixPathInTitle: true
+
+  Dock:
+    autohide: true
+    minimizeToApplication: false
+    tilesize: 64
+
+  AutomaticSpellingCorrectionEnabled: true
+  enableFirewall: false
+  enableStealthMode: false
+  enableSsh: true
+
+configure_gpg: true
 gpg_keyserver: keys.openpgp.org
+
+# From which repository should we install homebrew?
+homebrew_repository: https://github.com/Homebrew/brew
+
+# Set to true if you want to use master branch instead of release auto-detect,
+# or you use custom fork specified in homebrew_repository
+homebrew_repository_use_master: false
+
+# How much times to retry, if installation of package / tap / cask fails ?
+# This can happen during network problems.
+homebrew_retries: 5
+
+# Delay between each retry attempt.
+homebrew_delay: 3
+homebrew_cask_appdir: /Applications
+# If set to true, passes --greedy to brew cask outdated when checking if an installed cask has a newer version available.
+homebrew_cask_greedy_mode: true
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
