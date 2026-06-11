@@ -138,7 +138,9 @@ homebrew_cask_apps:
   - automounterhelper # Helper for AutoMounter to mount shares to custom locations
   - bbedit # Text, code, and markup editor
   - betterdiscord-installer # Installer for BetterDiscord
-  - betterdisplay # Display management tool
+  # - betterdisplay # Display management tool
+  - bettermouse
+  - bettertouchtool # Customise touchpad behavior
   - claude # Anthropic's official Claude AI desktop app
   - claude-code # Terminal-based AI coding assistant
   - cleanshot # Screen capturing tool
@@ -150,6 +152,9 @@ homebrew_cask_apps:
   - elgato-capture-device-utility # Update and configure Elgato Capture devices
   - elgato-stream-deck # Assign keys, and then decorate and label them
   - elgato-studio # Capture and manage Elgato devices for content creation
+  - farrago
+  - piezo
+  - lm-studio
   - fission # Audio editor
   - focusrite-control-2 # Focusrite interface controller for devices of the 4th generation and newer
   - font-anonymous-pro
@@ -179,6 +184,7 @@ homebrew_cask_apps:
   - latest # Utility that shows the latest app updates
   - linearmouse # Customise mouse behavior
   - little-snitch # Host-based application firewall
+  - loopback # Loopback audio driver
   - mactex # Full TeX Live distribution with GUI applications
   - obs # Open-source software for live streaming and screen recording
   - obsidian # Knowledge base that works on top of a local folder of plain text Markdown files
