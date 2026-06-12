@@ -2,6 +2,7 @@
 - name: Trust added taps
   ansible.builtin.command:
     cmd: "brew trust dracula/install buo/cask-upgrade domt4/autoupdate"
+  changed_when: false
 
 - name: Install Homebrew CLI apps
   community.general.homebrew:
@@ -17,6 +18,7 @@
 - name: Initialize tealdeer
   ansible.builtin.command:
     cmd: "tldr --update"
+  changed_when: false
 
 - name: Symlink claude
   ansible.builtin.file:

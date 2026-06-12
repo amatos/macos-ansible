@@ -1,0 +1,29 @@
+---
+extends: default
+
+rules:
+  # Required by ansible-lint
+  comments-indentation: false
+  octal-values:
+    forbid-implicit-octal: true
+    forbid-explicit-octal: true
+
+  # Inline comments after package names use a single space — allow it.
+  comments:
+    min-spaces-from-content: 1
+
+  # Config/data files have long lines (paths, descriptions). Warn instead of error.
+  line-length:
+    max: 120
+    level: warning
+
+  # Flow mappings like { name: "Foo", id: 123 } use a single space inside braces.
+  braces:
+    min-spaces-inside: 0
+    max-spaces-inside: 1
+
+  # vars files don't require a document-start marker.
+  document-start: disable
+
+ignore: |
+  roles/

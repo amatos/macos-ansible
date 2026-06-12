@@ -1,0 +1,7 @@
+---
+# Exclude third-party Galaxy roles from linting
+exclude_paths:
+  - roles/
+
+warn_list:
+  - yaml[line-length]

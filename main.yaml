@@ -10,7 +10,7 @@
 
   pre_tasks:
     - name: Include playbook configuration.
-      include_vars: "{{ item }}"
+      ansible.builtin.include_vars: "{{ item }}"
       with_fileglob:
         - "{{ playbook_dir }}/config.yaml"
       tags: ["always"]
@@ -25,38 +25,47 @@
       tags: ["dock"]
 
   tasks:
-    - import_tasks: tasks/pam-touchid.yaml
+    - name: Configure PAM TouchID
+      ansible.builtin.import_tasks: tasks/pam-touchid.yaml
       when: configure_pam_touchid
       tags: ["pam-touchid"]
 
-    - import_tasks: tasks/homebrew.yaml
+    - name: Configure Homebrew
+      ansible.builtin.import_tasks: tasks/homebrew.yaml
       when: configure_homebrew
       tags: ["homebrew"]
 
-    - import_tasks: tasks/sudoers.yaml
+    - name: Configure sudoers
+      ansible.builtin.import_tasks: tasks/sudoers.yaml
       when: configure_sudoers
       tags: ["sudoers"]
 
-    - import_tasks: tasks/terminal.yaml
+    - name: Configure Terminal
+      ansible.builtin.import_tasks: tasks/terminal.yaml
       when: configure_terminal
       tags: ["terminal"]
 
-    - import_tasks: tasks/gpg.yaml
+    - name: Configure GPG
+      ansible.builtin.import_tasks: tasks/gpg.yaml
       when: configure_gpg
       tags: ["gpg"]
 
-    - import_tasks: tasks/macos.yaml
+    - name: Configure macOS settings
+      ansible.builtin.import_tasks: tasks/macos.yaml
       when: configure_macos
       tags: ["osx"]
 
-    - import_tasks: tasks/mas.yaml
+    - name: Install MAS apps
+      ansible.builtin.import_tasks: tasks/mas.yaml
       when: install_mas_apps | bool
       tags: ["mas"]
 
-    - import_tasks: tasks/extra-packages.yaml
+    - name: Install extra packages
+      ansible.builtin.import_tasks: tasks/extra-packages.yaml
       tags: ["extra-packages"]
 
-    - import_tasks: tasks/dotfiles.yaml
+    - name: Configure dotfiles
+      ansible.builtin.import_tasks: tasks/dotfiles.yaml
       tags: ["dotfiles"]
       when: configure_homebrew and configure_gpg and configure_dotfiles | bool
 
@@ -64,16 +73,17 @@
       tags: ["post"]
       block:
         - name: Run configured post-provision ansible task files.
-          include_tasks: "{{ outer_item }}"
+          ansible.builtin.include_tasks: "{{ outer_item }}"
           loop_control:
             loop_var: outer_item
           with_fileglob: "{{ post_provision_tasks | default(omit) }}"
 
   handlers:
-    - name: restart dock
+    - name: Restart dock
       ansible.builtin.command: killall Dock
+      changed_when: false
 
-    - name: restart sshd
+    - name: Restart sshd
       become: true
       community.general.launchd:
         name: com.openssh.sshd

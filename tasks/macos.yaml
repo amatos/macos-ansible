@@ -4,9 +4,10 @@
   become: true
   ansible.builtin.command: "{{ item }}"
   loop:
-    - "scutil --set HostName {{macos_hostname }}"
-    - "scutil --set LocalHostName {{macos_hostname }}"
-    - "scutil --set ComputerName {{macos_hostname }}"
+    - "scutil --set HostName {{ macos.hostname }}"
+    - "scutil --set LocalHostName {{ macos.hostname }}"
+    - "scutil --set ComputerName {{ macos.hostname }}"
+    - "defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string {{ macos.hostname }}"
   changed_when: true
 
 - name: Configure Finder preferences
@@ -16,22 +17,18 @@
     type: "{{ item.type }}"
     value: "{{ item.value }}"
   loop:
-    - {
-        key: AppleShowAllFiles,
-        type: bool,
-        value: "{{ macos.Finder.AppleShowAllFiles }}",
-      }
-    - { key: ShowPathbar, type: bool, value: "{{ macos.Finder.ShowPathbar }}" }
-    - {
-        key: ShowStatusBar,
-        type: bool,
-        value: "{{ macos.Finder.ShowStatusBar }}",
-      }
-    - {
-        key: _FXShowPosixPathInTitle,
-        type: bool,
-        value: "{{ macos.Finder._FXShowPosixPathInTitle }}",
-      }
+    - key: AppleShowAllFiles
+      type: bool
+      value: "{{ macos.Finder.AppleShowAllFiles }}"
+    - key: ShowPathbar
+      type: bool
+      value: "{{ macos.Finder.ShowPathbar }}"
+    - key: ShowStatusBar
+      type: bool
+      value: "{{ macos.Finder.ShowStatusBar }}"
+    - key: _FXShowPosixPathInTitle
+      type: bool
+      value: "{{ macos.Finder._FXShowPosixPathInTitle }}"
 
 - name: Configure Dock preferences
   community.general.osx_defaults:
@@ -40,14 +37,16 @@
     type: "{{ item.type }}"
     value: "{{ item.value }}"
   loop:
-    - { key: autohide, type: bool, value: "{{ macos.Dock.autohide }}" }
-    - {
-        key: minimize-to-application,
-        type: bool,
-        value: "{{ macos.Dock.minimizeToApplication }}",
-      }
-    - { key: tilesize, type: int, value: "{{ macos.Dock.tilesize }}" }
-  notify: restart dock
+    - key: autohide
+      type: bool
+      value: "{{ macos.Dock.autohide }}"
+    - key: minimize-to-application
+      type: bool
+      value: "{{ macos.Dock.minimizeToApplication }}"
+    - key: tilesize
+      type: int
+      value: "{{ macos.Dock.tilesize }}"
+  notify: Restart dock
 
 - name: Disable auto-correct
   community.general.osx_defaults:
@@ -60,16 +59,19 @@
   become: true
   ansible.builtin.command: /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
   when: macos.enableFirewall
+  changed_when: false
 
 - name: Enable stealth mode
   become: true
   ansible.builtin.command: /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
   when: macos.enableStealthMode
+  changed_when: false
 
 - name: Enable SSH (Remote Login)
   become: true
   ansible.builtin.command: systemsetup -setremotelogin on
   when: macos.enableSsh
+  changed_when: false
 
 - name: Harden SSH
   become: true
@@ -80,7 +82,7 @@
   loop:
     - { regexp: "^#?PasswordAuthentication", line: "PasswordAuthentication no" }
     - { regexp: "^#?PermitRootLogin", line: "PermitRootLogin no" }
-  notify: restart sshd
+  notify: Restart sshd
 
 - name: Create common directories
   ansible.builtin.file:
@@ -99,11 +101,12 @@
     dest: "{{ lookup('env', 'HOME') }}/src"
     state: link
 
-- name: rosetta
+- name: Install Rosetta
   block:
-    - name: install rosetta
-      ansible.builtin.shell: /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+    - name: Install Rosetta
+      ansible.builtin.command: /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+      changed_when: false
 
 - name: Run .macos dotfiles.
-  command: "{{ macos_script }}"
+  ansible.builtin.command: "{{ macos_script }}"
   changed_when: false

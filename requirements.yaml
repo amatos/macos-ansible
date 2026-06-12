@@ -5,4 +5,5 @@ roles:
   - name: wayofdev.dock
 
 collections:
+  - name: community.general
   - name: mistermiles.gpg_key_import

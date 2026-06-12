@@ -16,3 +16,4 @@
 - name: Apply the dotfiles managed by chezmoi
   ansible.builtin.command:
     cmd: "chezmoi apply"
+  changed_when: false

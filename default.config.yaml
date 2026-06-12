@@ -17,25 +17,26 @@ user:
   email: "" # email address used for WKD key lookup
   gpg_key: ""
 
-macos_hostname: "{{ user.name }}s Mac"
 chezmoi_dotfiles_repo: ""
 
 macos:
+  hostname: "{{ user.name }}s-mac"
+  measurement_units: "Inches"
+  Screenshots:
+    folder: "{{ lookup('env', 'HOME') }}/Pictures/Screenshots/unsorted"
   Finder:
     AppleShowAllFiles: true
     ShowPathbar: true
     ShowStatusBar: true
     _FXShowPosixPathInTitle: true
-
   Dock:
     autohide: true
     minimizeToApplication: false
     tilesize: 64
-
   AutomaticSpellingCorrectionEnabled: true
   enableFirewall: false
   enableStealthMode: false
-  enableSsh: true
+  enableSsh: false
 
 gpg_keyserver: keys.openpgp.org
 

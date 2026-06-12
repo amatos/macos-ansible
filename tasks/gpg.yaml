@@ -10,20 +10,27 @@
   failed_when: false
   changed_when: false
 
-- name: Fetch GPG public key for {{ user.gpg_key }} (WKD then {{ gpg_keyserver }})
+- name: Fetch GPG public key (WKD then keyserver)
   ansible.builtin.command: gpg --keyserver "hkps://{{ gpg_keyserver }}" --auto-key-locate clear,wkd,keyserver --recv-keys {{ user.gpg_key }}
   when: gpg_check.rc != 0
+  changed_when: gpg_check.rc != 0
 
 - name: Extract GPG key fingerprint
   ansible.builtin.shell: |
+    set -o pipefail
     gpg --list-keys --with-colons "{{ user.gpg_email }}" | grep '^fpr' | head -n 1 | cut -d: -f10
+  args:
+    executable: /bin/bash
   register: gpg_fingerprint
   changed_when: false
   failed_when: gpg_fingerprint.stdout == ""
 
 - name: Apply ultimate trust to the key
   ansible.builtin.shell: |
+    set -o pipefail
     echo "{{ gpg_fingerprint.stdout }}:6:" | gpg --import-ownertrust
+  args:
+    executable: /bin/bash
   register: trust_output
   changed_when: "'unid' in trust_output.stdout or 'inserted' in trust_output.stderr"
 
