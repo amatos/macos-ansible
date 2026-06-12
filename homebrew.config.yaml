@@ -209,3 +209,4 @@ homebrew_cask_apps:
   - zed # Multiplayer code editor
   - zoom # Video communication and virtual meeting platform
   - visual-studio-code
+  - tailscale-app # wireguard-based VPN client

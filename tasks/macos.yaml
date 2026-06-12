@@ -59,17 +59,17 @@
 - name: Enable firewall
   become: true
   ansible.builtin.command: /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
-  changed_when: macos.enableFirewall
+  when: macos.enableFirewall
 
 - name: Enable stealth mode
   become: true
   ansible.builtin.command: /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
-  changed_when: macos.enableStealthMode
+  when: macos.enableStealthMode
 
 - name: Enable SSH (Remote Login)
   become: true
   ansible.builtin.command: systemsetup -setremotelogin on
-  changed_when: macos.enableSsh
+  when: macos.enableSsh
 
 - name: Harden SSH
   become: true

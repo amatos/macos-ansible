@@ -12,69 +12,68 @@ mas_password: ""
 mas_upgrade_all_apps: false
 
 mas_installed_apps:
-  - { id: 1006739057, name: "NepTunes" }
-  - { id: 1160435653, name: "AutoMounter" }
-  - { id: 1246969117, name: "Steam Link" }
-  - { id: 1295203466, name: "Windows App" }
-  - { id: 1355679052, name: "Dropover" }
-  - { id: 1435957248, name: "Drafts" }
-  - { id: 1436522307, name: "Transmit" }
-  - { id: 1444636541, name: "Photomator" }
-  - { id: 1451685025, name: "WireGuard" }
-  - { id: 1469995354, name: "Broadcasts" }
-  - { id: 1475387142, name: "Tailscale" }
-  - { id: 1493996622, name: "Front and Center" }
-  - { id: 1496833156, name: "Swift Playground" }
-  - { id: 1497435571, name: "Simple Comic" }
-  - { id: 1503446680, name: "PastePal" }
-  - { id: 1534275760, name: "LanguageTool" }
-  - { id: 1546729687, name: "Auto HD FPS for YouTube" }
-  - { id: 1549370672, name: "Save to Raindrop.io" }
-  - { id: 1569813296, name: "1Password for Safari" }
-  - { id: 1594420480, name: "Prompt" }
-  - { id: 1607635845, name: "Velja" }
-  - { id: 1615087040, name: "Logic Pro" }
-  - { id: 1631624924, name: "Final Cut Pro" }
-  - { id: 361285480, name: "Keynote" }
-  - { id: 361304891, name: "Numbers" }
-  - { id: 361309726, name: "Pages" }
-  - { id: 408981434, name: "iMovie" }
-  - { id: 413897608, name: "Pastel" }
-  - { id: 445189367, name: "PopClip" }
-  - { id: 457851462, name: "Gomoku" }
-  - { id: 462054704, name: "Microsoft Word" }
-  - { id: 462058435, name: "Microsoft Excel" }
-  - { id: 462062816, name: "Microsoft PowerPoint" }
-  - { id: 497799835, name: "Xcode" }
-  - { id: 524373870, name: "Due" }
-  - { id: 640199958, name: "Developer" }
-  - { id: 6444602274, name: "Ivory" }
-  - { id: 6444667067, name: "Hyperduck" }
-  - { id: 6449850851, name: "Privacy.com for Safari" }
-  - { id: 6449873635, name: "Sink It" }
-  - { id: 6454431289, name: "CrystalFetch" }
-  - { id: 646372172, name: "Goban" }
-  - { id: 6471380298, name: "StopTheMadness Pro" }
-  - { id: 6472865291, name: "keymapp" }
-  - { id: 6475002485, name: "Reeder" }
-  - { id: 6737921844, name: "Acorn" }
-  - { id: 6738274497, name: "Raycast Companion" }
-  - { id: 6743055061, name: "Flix Fixer" }
-  - { id: 6745342698, name: "uBlock Origin Lite" }
-  - { id: 6746516157, name: "Compressor" }
-  - { id: 6746637089, name: "MainStage" }
-  - { id: 6746637149, name: "Motion" }
-  - { id: 6746662575, name: "Pixelmator Pro" }
-  - { id: 6747395062, name: "Clean Links" }
-  - { id: 6756848973, name: "BookShelves" }
-  - { id: 6758950886, name: "Tidyshot" }
-  - { id: 6760186407, name: "Code Peek+" }
-  - { id: 682658836, name: "GarageBand" }
-  - { id: 803453959, name: "Slack" }
-  - { id: 823766827, name: "OneDrive" }
-  - { id: 904280696, name: "Things" }
-  - { id: 907640277, name: "John's Background Switcher" }
-  - { id: 937984704, name: "Amphetamine" }
-  - { id: 953286746, name: "Darkroom" }
-  - { id: 975937182, name: "Fantastical" }
-    #  - { id: , name: ""}
+  - { name: "1Password for Safari", id: 1569813296 }
+  - { name: "Acorn", id: 6737921844 }
+  - { name: "Amphetamine", id: 937984704 }
+  - { name: "Auto HD FPS for YouTube", id: 1546729687 }
+  - { name: "AutoMounter", id: 1160435653 }
+  - { name: "BookShelves", id: 6756848973 }
+  - { name: "Broadcasts", id: 1469995354 }
+  - { name: "Clean Links", id: 6747395062 }
+  - { name: "Code Peek+", id: 6760186407 }
+  - { name: "Compressor", id: 6746516157 }
+  - { name: "CrystalFetch", id: 6454431289 }
+  - { name: "Darkroom", id: 953286746 }
+  - { name: "Developer", id: 640199958 }
+  - { name: "Drafts", id: 1435957248 }
+  - { name: "Dropover", id: 1355679052 }
+  - { name: "Due", id: 524373870 }
+  - { name: "Fantastical", id: 975937182 }
+  - { name: "Final Cut Pro", id: 1631624924 }
+  - { name: "Flix Fixer", id: 6743055061 }
+  - { name: "Front and Center", id: 1493996622 }
+  - { name: "GarageBand", id: 682658836 }
+  - { name: "Goban", id: 646372172 }
+  - { name: "Gomoku", id: 457851462 }
+  - { name: "Hyperduck", id: 6444667067 }
+  - { name: "Ivory", id: 6444602274 }
+  - { name: "John's Background Switcher", id: 907640277 }
+  - { name: "Keynote", id: 361285480 }
+  - { name: "LanguageTool", id: 1534275760 }
+  - { name: "Logic Pro", id: 1615087040 }
+  - { name: "MainStage", id: 6746637089 }
+  - { name: "Microsoft Excel", id: 462058435 }
+  - { name: "Microsoft PowerPoint", id: 462062816 }
+  - { name: "Microsoft Word", id: 462054704 }
+  - { name: "Motion", id: 6746637149 }
+  - { name: "NepTunes", id: 1006739057 }
+  - { name: "Numbers", id: 361304891 }
+  - { name: "OneDrive", id: 823766827 }
+  - { name: "Pages", id: 361309726 }
+  - { name: "PastePal", id: 1503446680 }
+  - { name: "Pastel", id: 413897608 }
+  - { name: "Photomator", id: 1444636541 }
+  - { name: "Pixelmator Pro", id: 6746662575 }
+  - { name: "PopClip", id: 445189367 }
+  - { name: "Privacy.com for Safari", id: 6449850851 }
+  - { name: "Prompt", id: 1594420480 }
+  - { name: "Raycast Companion", id: 6738274497 }
+  - { name: "Reeder", id: 6475002485 }
+  - { name: "Save to Raindrop.io", id: 1549370672 }
+  - { name: "Simple Comic", id: 1497435571 }
+  - { name: "Sink It", id: 6449873635 }
+  - { name: "Slack", id: 803453959 }
+  - { name: "Steam Link", id: 1246969117 }
+  - { name: "StopTheMadness Pro", id: 6471380298 }
+  - { name: "Swift Playground", id: 1496833156 }
+  - { name: "Things", id: 904280696 }
+  - { name: "Tidyshot", id: 6758950886 }
+  - { name: "Transmit", id: 1436522307 }
+  - { name: "Velja", id: 1607635845 }
+  - { name: "Windows App", id: 1295203466 }
+  - { name: "WireGuard", id: 1451685025 }
+  - { name: "Xcode", id: 497799835 }
+  - { name: "iMovie", id: 408981434 }
+  - { name: "keymapp", id: 6472865291 }
+  - { name: "uBlock Origin Lite", id: 6745342698 }
+  #  - { name: "", id: }

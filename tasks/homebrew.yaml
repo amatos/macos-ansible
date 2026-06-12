@@ -1,7 +1,7 @@
 ---
 - name: Trust added taps
   ansible.builtin.command:
-    cmd: "brew trust dracula/install"
+    cmd: "brew trust dracula/install buo/cask-upgrade domt4/autoupdate"
 
 - name: Install Homebrew CLI apps
   community.general.homebrew:

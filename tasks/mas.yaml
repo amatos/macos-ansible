@@ -32,12 +32,14 @@
       community.general.mas:
         upgrade_all: true
       when: mas_upgrade_all_apps | bool
+      become: true
       failed_when: false # mas upgrade is unreliable on Ventura+; don't abort the play
 
     - name: Install Mac App Store apps
       community.general.mas:
         id: "{{ item.id }}"
         state: present
+      become: true
       loop: "{{ mas_installed_apps }}"
       loop_control:
         label: "{{ item.name }}"
