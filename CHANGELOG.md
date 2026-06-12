@@ -51,6 +51,38 @@ All notable changes to this project will be documented in this file.
 
 - **`mas.config.yaml`** — Added missing `---` document-start marker.
 
+### Removed
+
+- **`mas.config.yaml`** — Removed PopClip (id: 445189367) from
+  `mas_installed_apps`.
+
+### Changed
+
+- **`default.config.yaml`** — Added new `macos` preference defaults:
+  `volumeChangeFeedback`, `navPanelExpandedStateForSaveMode` (×2),
+  `printPanelExpandedStateForPrint` (×2), `disableLaunchServicesQuarantine`,
+  `enableAppleFontSmoothingOnNonRetinaDisplays`, and
+  `Screenshots.Format: "png"`.
+
+- **`tasks/macos.yaml`** — Added tasks to apply the new macOS preference
+  defaults: disable volume-change feedback, expand save and print panels by
+  default, configure screenshot location and format, enable Apple font
+  smoothing on non-Retina displays, and disable the Launch Services quarantine
+  dialog.
+
+- **`main.yaml`**, **`config.yaml`**, **`default.config.yaml`** — Applied
+  `combine(recursive=True)` deep-merge pattern to the `user` dict, matching the
+  existing pattern for `macos`. Added `user.gpg_email: ""` default to
+  `default.config.yaml`, added `user_overrides: {}` sentinel, renamed `user:`
+  to `user_overrides:` in `config.yaml`, and added a `set_fact` merge task in
+  `main.yaml` `pre_tasks`.
+
+- **`main.yaml`** — Renamed tag `osx` to `macos` on the `Configure macOS
+  settings` import task for consistency with the rest of the project naming.
+
+- **`CLAUDE.md`** — Added `## Changelog` directive instructing future agents to
+  update `CHANGELOG.md` with every change.
+
 ### Added
 
 - **`.yamllint`** — New project-specific yamllint configuration extending the

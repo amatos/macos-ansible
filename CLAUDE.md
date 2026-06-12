@@ -27,7 +27,7 @@ ansible-playbook main.yaml --ask-become-pass --tags homebrew
 ansible-playbook main.yaml --ask-become-pass --tags dock
 ansible-playbook main.yaml --ask-become-pass --tags gpg
 ansible-playbook main.yaml --ask-become-pass --tags pam-touchid
-ansible-playbook main.yaml --ask-become-pass --tags osx
+ansible-playbook main.yaml --ask-become-pass --tags macos
 ansible-playbook main.yaml --ask-become-pass --tags sudoers
 ansible-playbook main.yaml --ask-become-pass --tags extra-packages
 ```
@@ -94,6 +94,10 @@ Any supporting scripts or programs (helpers, one-off utilities, maintenance tool
 
 - `bin/mac_askpass.sh` — AppleScript sudo helper used by Ansible tasks
 - `bin/annotate_packages.py` — annotates `homebrew_installed_packages` entries with `brew desc` descriptions
+
+## Changelog
+
+Update `CHANGELOG.md` whenever you make a change to the repository. Add entries under the `## [Unreleased]` section, using `### Added`, `### Changed`, `### Fixed`, or `### Removed` sub-headings as appropriate. Each entry should name the affected file and briefly explain what changed and why.
 
 ## Custom Ansible module
 

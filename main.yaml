@@ -15,6 +15,16 @@
         - "{{ playbook_dir }}/config.yaml"
       tags: ["always"]
 
+    - name: Merge user_overrides into user defaults.
+      ansible.builtin.set_fact:
+        user: "{{ user | combine(user_overrides, recursive=True) }}"
+      tags: ["always"]
+
+    - name: Merge macos_overrides into macos defaults.
+      ansible.builtin.set_fact:
+        macos: "{{ macos | combine(macos_overrides, recursive=True) }}"
+      tags: ["always"]
+
   roles:
     - role: elliotweiser.osx-command-line-tools
     - role: wayofdev.homebrew
@@ -53,7 +63,7 @@
     - name: Configure macOS settings
       ansible.builtin.import_tasks: tasks/macos.yaml
       when: configure_macos
-      tags: ["osx"]
+      tags: ["macos"]
 
     - name: Install MAS apps
       ansible.builtin.import_tasks: tasks/mas.yaml

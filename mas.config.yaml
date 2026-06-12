@@ -55,7 +55,6 @@ mas_installed_apps:
   - { name: "Pastel", id: 413897608 }
   - { name: "Photomator", id: 1444636541 }
   - { name: "Pixelmator Pro", id: 6746662575 }
-  - { name: "PopClip", id: 445189367 }
   - { name: "Privacy.com for Safari", id: 6449850851 }
   - { name: "Prompt", id: 1594420480 }
   - { name: "Raycast Companion", id: 6738274497 }

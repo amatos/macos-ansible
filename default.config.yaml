@@ -15,7 +15,12 @@ configure_sublime: false
 user:
   name: ""
   email: "" # email address used for WKD key lookup
+  gpg_email: ""
   gpg_key: ""
+
+# Per-machine overrides for the user dict. Set keys here in config.yaml
+# instead of redefining user: — they are deep-merged at play start.
+user_overrides: {}
 
 chezmoi_dotfiles_repo: ""
 
@@ -24,6 +29,8 @@ macos:
   measurement_units: "Inches"
   Screenshots:
     folder: "{{ lookup('env', 'HOME') }}/Pictures/Screenshots/unsorted"
+    # Valid values: "png", "jpg", "tiff", "pdf", "bmp", "gif"
+    Format: "png"
   Finder:
     AppleShowAllFiles: true
     ShowPathbar: true
@@ -37,6 +44,17 @@ macos:
   enableFirewall: false
   enableStealthMode: false
   enableSsh: false
+  volumeChangeFeedback: true
+  navPanelExpandedStateForSaveMode: true
+  navPanelExpandedStateForSaveMode2: true
+  printPanelExpandedStateForPrint: true
+  printPanelExpandedStateForPrint2: true
+  disableLaunchServicesQuarantine: true
+  enableAppleFontSmoothingOnNonRetinaDisplays: true
+
+# Per-machine overrides for the macos dict. Set keys here in config.yaml
+# instead of redefining macos: — they are deep-merged at play start.
+macos_overrides: {}
 
 gpg_keyserver: keys.openpgp.org
 

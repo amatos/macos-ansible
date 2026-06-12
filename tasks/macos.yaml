@@ -55,6 +55,69 @@
     type: bool
     value: "{{ macos.AutomaticSpellingCorrectionEnabled }}"
 
+- name: Disable volume change feedback
+  community.general.osx_defaults:
+    key: com.apple.sound.beep.feedback
+    type: bool
+    value: "{{ macos.volumeChangeFeedback }}"
+
+- name: Expand save panel by default
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: NSNavPanelExpandedStateForSaveMode
+      type: bool
+      value: "{{ macos.navPanelExpandedStateForSaveMode }}"
+    - key: NSNavPanelExpandedStateForSaveMode2
+      type: bool
+      value: "{{ macos.navPanelExpandedStateForSaveMode2 }}"
+
+- name: Expand print panel by default
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: PMPrintingExpandedStateForPrint
+      type: bool
+      value: "{{ macos.printPanelExpandedStateForPrint }}"
+    - key: PMPrintingExpandedStateForPrint2
+      type: bool
+      value: "{{ macos.printPanelExpandedStateForPrint2 }}"
+
+- name: Screenshot settings
+  community.general.osx_defaults:
+    domain: com.apple.screencapture
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: location
+      type: string
+      value: "{{ macos.Screenshots.Folder }}"
+    - key: type
+      type: string
+      value: "{{ macos.Screenshots.Format }}"
+
+- name: Enable Apple Font Smoothing on Non-Retina Displays
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleFontSmoothing
+    type: int
+    value: 2
+  when: macos.enableAppleFontSmoothingOnNonRetinaDisplays
+
+- name: Disable the "Are you sure you want to open this application?" dialog
+  community.general.osx_defaults:
+    domain: com.apple.LaunchServices
+    key: LSQuarantine
+    type: bool
+    value: "{{ macos.disableLaunchServicesQuarantine }}"
+
 - name: Enable firewall
   become: true
   ansible.builtin.command: /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
