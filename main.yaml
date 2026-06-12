@@ -20,6 +20,9 @@
     - role: wayofdev.homebrew
       when: configure_homebrew
       tags: ["homebrew"]
+    - role: wayofdev.dock
+      when: configure_dock
+      tags: ["dock"]
 
   tasks:
     - import_tasks: tasks/pam-touchid.yaml

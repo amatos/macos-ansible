@@ -1,72 +1,96 @@
 ---
-dockutil_install: true
-dockitems_remove:
-  - Calendar
-  - Reminders
-  - Notes
-  - Games
-  - Maps
-dockitems_persist:
-  - name: "Apps"
+dock_dockutil_install: true
+
+dock_dockitems:
+  - label: "Apps"
     path: "/System/Applications/Apps.app/"
-    pos: 1
-  - name: "Safari"
+    action: add
+    position: 1
+  - label: "Safari"
     path: "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/"
-    pos: 2
-  - name: "Helium"
+    action: add
+    position: 2
+  - label: "Helium"
     path: "/Applications/Helium.app/"
-    pos: 3
-  - name: "Google Chrome"
+    action: add
+    position: 3
+  - label: "Google Chrome"
     path: "/Applications/Google Chrome.app/"
-    pos: 4
-  - name: "Mail"
+    action: add
+    position: 4
+  - label: "Mail"
     path: "/System/Applications/Mail.app/"
-    pos: 5
-  - name: "Messages"
+    action: add
+    position: 5
+  - label: "Messages"
     path: "/System/Applications/Messages.app/"
-    pos: 6
-  - name: "Phone"
+    action: add
+    position: 6
+  - label: "Phone"
     path: "/System/Applications/Phone.app/"
-    pos: 7
-  - name: "FaceTime"
+    action: add
+    position: 7
+  - label: "FaceTime"
     path: "/System/Applications/FaceTime.app/"
-    pos: 8
-  - name: "Calendar"
+    action: add
+    position: 8
+  - label: "Calendar"
     path: "/System/Applications/Calendar.app/"
-    pos: 9
-  - name: "Contacts"
+    action: add
+    position: 9
+  - label: "Contacts"
     path: "/System/Applications/Contacts.app/"
-    pos: 10
-  - name: "News"
+    action: add
+    position: 10
+  - label: "News"
     path: "/System/Applications/News.app/"
-    pos: 11
-  - name: "Music"
+    action: add
+    position: 11
+  - label: "Music"
     path: "/System/Applications/Music.app/"
-    pos: 12
-  - name: "Photos"
+    action: add
+    position: 12
+  - label: "Photos"
     path: "/System/Applications/Photos.app/"
-    pos: 13
-  - name: "TV"
+    action: add
+    position: 13
+  - label: "TV"
     path: "/System/Applications/TV.app/"
-    pos: 14
-  - name: "App Store"
+    action: add
+    position: 14
+  - label: "App Store"
     path: "/System/Applications/App Store.app/"
-    pos: 15
-  - name: "System Settings"
+    action: add
+    position: 15
+  - label: "System Settings"
     path: "/System/Applications/System Settings.app/"
-    pos: 16
-  - name: "Preview"
+    action: add
+    position: 16
+  - label: "Preview"
     path: "/System/Applications/Preview.app/"
-    pos: 17
-  - name: "Zed"
+    action: add
+    position: 17
+  - label: "Zed"
     path: "/Applications/Zed.app/"
-    pos: 18
-  - name: "Ghostty"
+    action: add
+    position: 18
+  - label: "Ghostty"
     path: "/Applications/Ghostty.app/"
-    pos: 19
-  - name: "Claude"
+    action: add
+    position: 19
+  - label: "Claude"
     path: "/Applications/Claude.app/"
-    pos: 20
-  - name: "Siri"
-    path: "/System/Applications/Campo.app/"
-    pos: 21
+    action: add
+    position: 20
+  - label: Reminders
+    action: remove
+    allhomes: true
+  - label: Notes
+    action: remove
+    allhomes: true
+  - label: Games
+    action: remove
+    allhomes: true
+  - label: Maps
+    action: remove
+    allhomes: true

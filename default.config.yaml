@@ -6,6 +6,10 @@ configure_macos: true
 install_mas_apps: true
 configure_pam_touchid: true
 configure_homebrew: true
+configure_dock: true
+configure_gpg: true
+configure_sudoers: false
+configure_sublime: false
 
 # Specify overrides in config.yaml
 user:
@@ -33,7 +37,6 @@ macos:
   enableStealthMode: false
   enableSsh: true
 
-configure_gpg: true
 gpg_keyserver: keys.openpgp.org
 
 # From which repository should we install homebrew?
@@ -53,10 +56,6 @@ homebrew_cask_appdir: /Applications
 # If set to true, passes --greedy to brew cask outdated when checking if an installed cask has a newer version available.
 homebrew_cask_greedy_mode: true
 
-# Set to 'true' to configure the Dock via dockutil.
-configure_dock: true
-
-configure_sudoers: false
 sudoers_custom_config: ""
 # Example:
 # sudoers_custom_config: |
@@ -97,7 +96,6 @@ pip_packages: []
 #   version: "0.16.3" # default: N/A
 
 # Set to 'true' to configure Sublime Text.
-configure_sublime: false
 sublime_base_path: "~/Library/Application Support/Sublime Text"
 sublime_config_path: "Packages/User"
 sublime_package_control:
