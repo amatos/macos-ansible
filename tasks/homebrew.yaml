@@ -18,6 +18,12 @@
   ansible.builtin.command:
     cmd: "tldr --update"
 
+- name: Symlink claude
+  ansible.builtin.file:
+    src: "/opt/homebrew/bin/claude"
+    dest: "/usr/local/bin/claude"
+    state: link
+
 - name: Install Homebrew Casks
   community.general.homebrew_cask:
     name: "{{ item }}"
